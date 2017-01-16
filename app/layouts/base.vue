@@ -8,7 +8,7 @@
       </div>
 
       <div class="nav-center">
-        <a class="nav-item" href="https://gitub.com/lubien/vue-brunch-boilerplate" target="_blank">
+        <a class="nav-item" href="https://github.com/lubien/vue-brunch-boilerplate" target="_blank">
           <span class="icon">
             <i class="fa fa-github"></i>
           </span>

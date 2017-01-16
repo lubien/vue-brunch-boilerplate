@@ -10,6 +10,7 @@
   "scripts": {
     "watch": "brunch watch --server",
     "build": "brunch build --production",
+    "deploy": "npm run build && gh-pages -d public",
     "test": "eslint app/*"
   },
   "author": {
@@ -38,6 +39,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
+    "gh-pages": "^0.12.0",
     "vue-brunch": "^1.2.3"
   }
 }
