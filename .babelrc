@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "es2015"
+  ],
+  "plugins": [
+    ["module-alias", [
+      { "src": "./app/components", "expose": "app/components" },
+      { "src": "./app/layouts", "expose": "app/layouts" },
+      { "src": "./app/api", "expose": "app/api" },
+      { "src": "./app/state/store.js", "expose": "app/store" },
+      { "src": "./app/utils.js", "expose": "app/utils" }
+    ]]
+  ]
+}
