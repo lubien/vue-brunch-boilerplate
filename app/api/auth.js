@@ -1,19 +1,18 @@
-import Vue from 'vue';
-import State from '../state/store';
-import VueResource from 'vue-resource';
+import Vue from 'vue'
+import store from 'app/store'
+import VueResource from 'vue-resource'
 import {
-    AUTH_TOKEN,
-} from '../state/mutations';
+  AUTH_TOKEN
+} from '../state/mutations'
 
-Vue.use(VueResource);
+Vue.use(VueResource)
 
 export default {
+  signin (username, password) {
+    store.commit(AUTH_TOKEN, 'Q6SnSk2N5wGbXsEllqG6hSx7vRmxcz')
+  },
 
-    signin: function(username, password) {
-        State.commit(AUTH_TOKEN, 'Q6SnSk2N5wGbXsEllqG6hSx7vRmxcz');
-    },
-
-    signout: function() {
-        State.commit(AUTH_TOKEN, null);
-    }
+  signout () {
+    store.commit(AUTH_TOKEN, null)
+  }
 }

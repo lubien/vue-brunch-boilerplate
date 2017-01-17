@@ -1,22 +1,20 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import Logger from 'vuex/dist/logger';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import Logger from 'vuex/dist/logger'
 
-import auth from './modules/auth';
+import auth from './modules/auth'
 
-Vue.use(Vuex);
-Vue.config.debug = true;
+Vue.use(Vuex)
+Vue.config.debug = true
 
 export default new Vuex.Store({
+  strict: true,
 
-    strict: true,
+  modules: {
+    auth
+  },
 
-    modules: {
-        auth
-    },
-
-    middlewares: [
-        Logger()
-    ]
-
-});
+  middlewares: [
+    Logger()
+  ]
+})
