@@ -1,18 +1,15 @@
-import {
-  AUTH_TOKEN
-} from '../mutations'
-
 const state = {
   token: null
 }
 
 const mutations = {
-  [AUTH_TOKEN] (state, token) {
+  set_token (state, token) {
     state.token = token
   }
 }
 
 export default {
+  namespaced: true,
   state,
   mutations
 }
