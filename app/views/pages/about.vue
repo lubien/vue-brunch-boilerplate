@@ -1,14 +1,6 @@
 <template>
   <div>
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container is-fluid">
-          <h1 class="title">
-            About
-          </h1>
-        </div>
-      </div>
-    </section>
+    <hero-title text="About Page"/>
 
     <div class="container">
       <p>
@@ -35,7 +27,11 @@
 </template>
 
 <script>
+  import {HeroTitle} from 'app/components'
+
   export default {
     name: 'AboutView',
+
+    components: {HeroTitle}
   }
 </script>

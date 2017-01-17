@@ -1,14 +1,6 @@
 <template>
   <div>
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container is-fluid">
-          <h1 class="title">
-            HomePage
-          </h1>
-        </div>
-      </div>
-    </section>
+    <hero-title text="HomePage"/>
 
     <div class="container">
       <br/>
@@ -30,9 +22,12 @@
 <script>
   import {mapState} from 'vuex'
   import {Auth} from 'app/api'
+  import {HeroTitle} from 'app/components'
 
   export default {
     name: 'HomeView',
+
+    components: {HeroTitle},
 
     computed: mapState({
       token: state => state.auth.token
