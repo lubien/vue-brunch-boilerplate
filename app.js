@@ -21300,14 +21300,14 @@ require.register("api/auth.js", function(exports, require, module) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _vue = require('vue');
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _store = require('../state/store');
+var _store = require('../state/store.js');
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -21315,21 +21315,17 @@ var _vueResource = require('vue-resource');
 
 var _vueResource2 = _interopRequireDefault(_vueResource);
 
-var _mutations = require('../state/mutations');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vueResource2.default);
 
 exports.default = {
-
-    signin: function signin(username, password) {
-        _store2.default.commit(_mutations.AUTH_TOKEN, 'Q6SnSk2N5wGbXsEllqG6hSx7vRmxcz');
-    },
-
-    signout: function signout() {
-        _store2.default.commit(_mutations.AUTH_TOKEN, null);
-    }
+  signin: function signin(username, password) {
+    _store2.default.commit('auth/set_token', 'Q6SnSk2N5wGbXsEllqG6hSx7vRmxcz');
+  },
+  signout: function signout() {
+    _store2.default.commit('auth/set_token', null);
+  }
 };
 
 });
@@ -21379,10 +21375,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = {
-    name: 'RouterBase'
+  name: 'RouterBase'
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
@@ -21564,38 +21560,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 ;require.register("state/modules/auth.js", function(exports, require, module) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _mutations2 = require('../mutations');
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var state = {
-    token: null
-};
-
-var mutations = _defineProperty({}, _mutations2.AUTH_TOKEN, function (state, token) {
-    state.token = token;
-});
-
-exports.default = {
-    state: state,
-    mutations: mutations
-};
-
-});
-
-require.register("state/mutations.js", function(exports, require, module) {
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var AUTH_TOKEN = exports.AUTH_TOKEN = 'AUTH_TOKEN';
+var state = {
+  token: null
+};
+
+var mutations = {
+  set_token: function set_token(state, token) {
+    state.token = token;
+  }
+};
+
+exports.default = {
+  namespaced: true,
+  state: state,
+  mutations: mutations
+};
 
 });
 
@@ -21603,7 +21587,7 @@ require.register("state/store.js", function(exports, require, module) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _vue = require('vue');
@@ -21628,15 +21612,13 @@ _vue2.default.use(_vuex2.default);
 _vue2.default.config.debug = true;
 
 exports.default = new _vuex2.default.Store({
+  strict: true,
 
-    strict: true,
+  modules: {
+    auth: _auth2.default
+  },
 
-    modules: {
-        auth: _auth2.default
-    },
-
-    middlewares: [(0, _logger2.default)()]
-
+  middlewares: [(0, _logger2.default)()]
 });
 
 });
@@ -21850,11 +21832,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 });
 
-;require.alias("babel-polyfill/lib/index.js", "babel-polyfill");
-require.alias("vue-router/dist/vue-router.common.js", "vue-router");
-require.alias("vue/dist/vue.runtime.common.js", "vue");
+;require.alias("vue/dist/vue.runtime.common.js", "vue");
 require.alias("vue-resource/dist/vue-resource.common.js", "vue-resource");
+require.alias("babel-polyfill/lib/index.js", "babel-polyfill");
 require.alias("vue-validator/dist/vue-validator.common.js", "vue-validator");
+require.alias("vue-router/dist/vue-router.common.js", "vue-router");
 require.alias("process/browser.js", "process");
 require.alias("vuex/dist/vuex.js", "vuex");
 require.alias("babel-regenerator-runtime/runtime.js", "babel-regenerator-runtime");process = require('process');require.register("___globals___", function(exports, require, module) {
