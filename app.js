@@ -21850,9 +21850,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 });
 
-;require.alias("vue/dist/vue.runtime.common.js", "vue");
-require.alias("babel-polyfill/lib/index.js", "babel-polyfill");
+;require.alias("babel-polyfill/lib/index.js", "babel-polyfill");
 require.alias("vue-router/dist/vue-router.common.js", "vue-router");
+require.alias("vue/dist/vue.runtime.common.js", "vue");
 require.alias("vue-resource/dist/vue-resource.common.js", "vue-resource");
 require.alias("vue-validator/dist/vue-validator.common.js", "vue-validator");
 require.alias("process/browser.js", "process");
